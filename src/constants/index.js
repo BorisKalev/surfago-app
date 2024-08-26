@@ -1,6 +1,8 @@
 import { surfBoards, surfboots, acessories } from "../assets/categories";
 import { neutron, proton } from "../assets/KneeBoards/kneeboards";
 
+import { phase5Doctor, phase5Phantom } from "../assets/onsale/onsale";
+
 import {
   hyperliteBootsWomen,
   hyperliteBootsRemix,
@@ -119,7 +121,6 @@ export const wakeboards = [
     title: "Hyperlite Gromcast",
     img: hyperlite,
     price: "399.00",
-    sale: "50",
     details:
       "Spawned from the Broadcast series, the Gromcast is an easy to surf fun shape for all kids to enjoy. The wide profile provides the needed surface area but the Gromcast is short and easily maneuverable so kids can begin learning power carves and spins. Customize the ride with 3 removable fin options and relax on the cushy, comfy Molded EVA Traction pad. Don’t make your groms ride a plank, get them on the Gromcast so you can sit back and watch them shred.",
     overview:
@@ -130,7 +131,6 @@ export const wakeboards = [
     title: "Phase 5 Avenger 2024",
     img: phase5,
     price: "609.99",
-    sale: "50",
     details:
       "We took our best-selling high end wakesurfer that all-stars like Parker Payne ride and put it in a package that offers performance and value for the masses. An all-around performer for skim style riding, the Phase Five Avenger will take your skills to the next level. The Avenger has a symmetrical outline designed to be ridden in both directions for tricks. We also included full deck EVA traction for no—compromise grip coverage. Equipped with a single fin setup and loaded with our 2” Skim Fin, the Avenger is ready to begin your journey to the pro-ranks.",
     overview: "The Phase 5 Avenger is the Progression Sled!",
@@ -139,7 +139,6 @@ export const wakeboards = [
     id: 9,
     title: "Phase 5 Diamond",
     img: phase5Diamond,
-    sale: "30",
     price: "1294.99",
     details:
       "The Phase Five Diamond Luv Wakesurfer is the high-end answer to the ladies pushing their limits. The Luv is the same shape as the Diamond CL in a scaled down version made with the best materials. The diamond shaped tail maintains speed and generates tons of pop for boosting airs. The pulled in nose is forgiving and won’t sink under water easily while carving or landing tricks. The Luv is built with our eye-catching Carbon Innegra Vertical (CI-V) weave material, and a single fin setup loaded with our 1” Skim Fin. This is tough LUV!",
@@ -150,7 +149,6 @@ export const wakeboards = [
     title: "Phase 5 Mvp Ltd 2024",
     img: phase5LTD,
     price: "399.00",
-    sale: "20",
     details:
       "Supporting aggressive skim style riding, the Phase Five MVP Wakesurfer harnesses unique features not found anywhere else in our lineup. Features a full decked Techno Traction V2 EVA grip setup with nose kick tail support for superior foot control. John’s idea for a kick tail in the nose was to gain more leverage to execute tricks while riding revert. The MVP is the only board with our RidgeGrip™ technology, a unique rail design inspired by his direct feedback. RidgeGrip stiffens the board and offers a pronounced spot to grab when executing tricks above the lip. The moon tail design and V-Spline bottom contours deliver maximum speed and handling. This year's LTD features a custom made John Akerman graphic.",
     overview:
@@ -161,7 +159,6 @@ export const wakeboards = [
     title: "Phase 5 Matrix Ltd 2023",
     img: phase5Matrix,
     price: "1159.99",
-    sale: "10",
     details:
       "Adopted by many professional riders on the Phase Five Team, the Matrix is sealed and approved to meet the highest expectations. The Matrix is made with a thinner core and boxy rails for ultimate POP and responsiveness. The symmetrical outline rides incredibly well backwards while the subtle V-Spline bottom contours generate trick demanding speed and sensitivity. The Matrix includes an added carbon stringer for next level pop, and constructed with our super tough GatorSkin™ to take a beating.",
     overview:
@@ -372,5 +369,30 @@ export const BootsInfo = [
       "The Remix Binding is a supportive but easy-to-get-into adjustable and sharable wakeboard binding.",
     details:
       "It features dual lace zones like more expensive bindings, plus the plushness you come to expect from an open-toe. The 3D molded tongue provides maximum comfort and solid board control. The Remix Binding is an excellent choice for beginner to intermediate riders looking for a comfortable, user-friendly wakeboard binding that will pair with any board on the market today.",
+  },
+];
+
+export const OnSaleItem = [
+  {
+    id: 36,
+    img: phase5Doctor,
+    title: "Phase 5 The Doctor",
+    overview:
+      "The Phase Five Doctor offers ultimate stability and board control for experienced riders.",
+    details:
+      "Its clean single concave bottom and rocker profile charge down the line for those who know how to generate speed and momentum to stay in the wave. The wide parallel shape offers a solid platform to learn advanced tricks quickly. The Doctor harnesses the ideal set of design features delivering ultimate forgiveness to the progressing rider. Big experienced riders will not want to miss out on the 57” and 59” options, while the 200 lb., and under club enjoy the 55” option. Glassed with our high end FLEXtec V2 system for unmatched strength and built with FCS Fusion fin plugs in a quad setup.",
+    price: "1464.99",
+    sale: "22",
+  },
+  {
+    id: 36,
+    img: phase5Phantom,
+    title: "Phase 5 Phantom 2024",
+    overview:
+      "The Phase Five Doctor offers ultimate stability and board control for experienced riders.",
+    details:
+      "Its clean single concave bottom and rocker profile charge down the line for those who know how to generate speed and momentum to stay in the wave. The wide parallel shape offers a solid platform to learn advanced tricks quickly. The Doctor harnesses the ideal set of design features delivering ultimate forgiveness to the progressing rider. Big experienced riders will not want to miss out on the 57” and 59” options, while the 200 lb., and under club enjoy the 55” option. Glassed with our high end FLEXtec V2 system for unmatched strength and built with FCS Fusion fin plugs in a quad setup.",
+    price: "1539.99",
+    sale: "50",
   },
 ];

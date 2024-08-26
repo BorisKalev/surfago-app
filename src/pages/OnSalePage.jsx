@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { wakeboards } from "../constants/index";
+import { OnSaleItem } from "../constants/index";
 const OnSalePage = () => {
   const calculatePrice = (price, sale) => {
     let finalPrice = (price - (price * sale) / 100).toFixed(2);
@@ -11,7 +11,7 @@ const OnSalePage = () => {
     <>
       <h1 className="mt-10 text-center font-bold text-xl">On Sale</h1>
       <div className="w-full grid grid-cols-3 lg-max:grid-cols-2 p-5 gap-5">
-        {wakeboards.map((item, idx) => (
+        {OnSaleItem.map((item, idx) => (
           <div className="relative w-full h-auto mb-[3rem] group" key={idx}>
             <div className="border border-black" key={idx}>
               <img
