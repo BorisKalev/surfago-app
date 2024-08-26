@@ -3,6 +3,11 @@ import React, { createContext, useState, useContext } from "react";
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
+  const calculatePrice = (price, sale) => {
+    let finalPrice = (price - (price * sale) / 100).toFixed(2);
+    return finalPrice;
+  };
+
   const [cart, setCart] = useState([]);
 
   const addToCart = (item) => {
@@ -34,7 +39,12 @@ export const CartProvider = ({ children }) => {
   };
 
   const calculateTotal = () => {
-    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+    return cart.reduce((total, item) => {
+      const itemTotal = item.sale
+        ? calculatePrice(item.price, item.sale) * item.quantity
+        : item.price * item.quantity;
+      return total + parseFloat(itemTotal);
+    }, 0);
   };
 
   const isInCart = (id) => {

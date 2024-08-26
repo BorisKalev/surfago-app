@@ -12,7 +12,10 @@ const Cart = () => {
 
     updateQuantity(itemId, currentQuantity - 1);
   };
-
+  const calculatePrice = (price, sale) => {
+    let finalPrice = (price - (price * sale) / 100).toFixed(2);
+    return finalPrice;
+  };
   return (
     <>
       <h1 className="text-2xl font-bold text-center mt-5 mb-5">Your cart</h1>
@@ -51,12 +54,25 @@ const Cart = () => {
                     +
                   </button>
                 </div>
-                <div className="flex items-center gap-1 flex-shrink-0 lg-max:mt-5">
-                  <h1>Price:</h1>
-                  <h1 className="font-bold">
-                    {(item.price * item.quantity).toFixed(2)}$
-                  </h1>
-                </div>
+
+                {item.sale ? (
+                  <div className="flex items-center gap-1 flex-shrink-0 lg-max:mt-5">
+                    <h1>Price:</h1>
+                    <h1 className="font-bold">
+                      {(
+                        calculatePrice(item.price, item.sale) * item.quantity
+                      ).toFixed(2)}
+                      $
+                    </h1>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-1 flex-shrink-0 lg-max:mt-5">
+                    <h1>Price:</h1>
+                    <h1 className="font-bold">
+                      {(item.price * item.quantity).toFixed(2)}$
+                    </h1>
+                  </div>
+                )}
 
                 <div className="flex items-center lg-max:mt-5">
                   <button onClick={() => removeFromCart(item.id)}>

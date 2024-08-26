@@ -36,6 +36,11 @@ const ItemDetailPage = () => {
     setOpenSection(section === openSection ? null : section);
   };
 
+  const calculatePrice = (price, sale) => {
+    let finalPrice = (price - (price * sale) / 100).toFixed(2);
+    return finalPrice;
+  };
+
   return (
     <>
       <div className="flex md-max:flex-col justify-center p-5 w-full">
@@ -59,16 +64,22 @@ const ItemDetailPage = () => {
               onClick={() => addFavorite(item)}
             />
           )}
-
           <div className="flex items-center mt-5">
             <h1 className="font-bold">Size :</h1>
             <span className="border-gray-300 border p-2 ml-2">One size</span>
           </div>
 
-          <div className="flex mt-5">
-            <h1 className="font-bold">Price: </h1>
-            <p className="ml-2">{item.price}$</p>
-          </div>
+          {item.sale ? (
+            <div className="flex mt-5">
+              <h1 className="font-bold">Price: </h1>
+              <p className="ml-2">{calculatePrice(item.price, item.sale)}$</p>
+            </div>
+          ) : (
+            <div className="flex mt-5">
+              <h1 className="font-bold">Price: </h1>
+              <p className="ml-2">{item.price}$</p>
+            </div>
+          )}
 
           <button
             className="bg-black text-white p-3 w-full text-center mt-5 hover:opacity-80"
@@ -76,7 +87,6 @@ const ItemDetailPage = () => {
           >
             Add to Cart
           </button>
-
           <div className="border-gray-300 border-t-2 border-b-2 mt-5 min-w-full">
             <div>
               <div
@@ -97,7 +107,6 @@ const ItemDetailPage = () => {
               )}
             </div>
           </div>
-
           <div className="border-gray-300 border-b-2 ">
             <div className="">
               <div
