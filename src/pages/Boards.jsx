@@ -19,22 +19,22 @@ const Boards = () => {
     setSortOption(event.target.value);
   };
 
-  const changePrice = (price) => {
-    if (typeof price !== "string") {
-      throw new Error("Input must be a string");
+  const changePrice = (price, sale) => {
+    if (sale) {
+      return parseFloat(calculatePrice(price, sale)); // Use the discounted price
     }
-    return parseFloat(price.replace(/[^0-9.]/g, "")); // Remove non-numeric characters except dot
+    return parseFloat(price); // Use the original price if no sale
   };
 
   const sortItems = (items, option) => {
     switch (option) {
       case "price-low-to-high":
         return [...items].sort(
-          (a, b) => changePrice(a.price) - changePrice(b.price)
+          (a, b) => changePrice(a.price, a.sale) - changePrice(b.price, b.sale)
         );
       case "price-high-to-low":
         return [...items].sort(
-          (a, b) => changePrice(b.price) - changePrice(a.price)
+          (a, b) => changePrice(b.price, b.sale) - changePrice(a.price, a.sale)
         );
       case "alphabetical-a-z":
         return [...items].sort((a, b) => a.title.localeCompare(b.title));
