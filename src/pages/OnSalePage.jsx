@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 import { OnSaleItem } from "../constants/index";
 const OnSalePage = () => {
   const calculatePrice = (price, sale) => {
@@ -14,11 +14,13 @@ const OnSalePage = () => {
         {OnSaleItem.map((item, idx) => (
           <div className="relative w-full h-auto mb-[3rem] group" key={idx}>
             <div className="border border-black" key={idx}>
-              <img
-                src={item.img}
-                alt={item.title}
-                className="w-full object-contain h-[400px] cursor-pointer"
-              />
+              <Link to={`/item/${item.id}`}>
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full object-contain h-[400px] cursor-pointer"
+                />
+              </Link>
             </div>
             {item.sale && (
               <div className="absolute top-3 left-2 bg-red-600 text-white rounded-lg px-3 py-1 rotate-[-15deg] shadow-lg text-center">

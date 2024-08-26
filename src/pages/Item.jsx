@@ -27,9 +27,11 @@ const ItemDetailPage = () => {
   ].find((item) => item.id === parseInt(id)); // Find the item by id
   const { addFavorite, removeFavorite, isFavorite } = useFavorites();
   const [openSection, setOpenSection] = useState("overview");
-  const { addToCart, isInCart } = useCart();
+  const { addToCart, isInCart, removeFromCart } = useCart();
   if (!item) {
-    return <p>Item not found!</p>;
+    return (
+      <p className="text-center font-bold text-xl mt-5">Item not found!</p>
+    );
   }
 
   const handleOpening = (section) => {
@@ -81,12 +83,25 @@ const ItemDetailPage = () => {
             </div>
           )}
 
-          <button
-            className="bg-black text-white p-3 w-full text-center mt-5 hover:opacity-80"
-            onClick={() => addToCart(item)}
-          >
-            Add to Cart
-          </button>
+          {/*Add to cart button*/}
+
+          {isInCart(item.id) ? (
+            <button
+              className="bg-black text-white p-3 w-full text-center mt-5 hover:opacity-80"
+              onClick={() => removeFromCart(item.id)}
+            >
+              Remove from Cart
+            </button>
+          ) : (
+            <button
+              className="bg-black text-white p-3 w-full text-center mt-5 hover:opacity-80"
+              onClick={() => addToCart(item)}
+            >
+              Add to Cart
+            </button>
+          )}
+
+          {/*Here it is the overview and details part*/}
           <div className="border-gray-300 border-t-2 border-b-2 mt-5 min-w-full">
             <div>
               <div
