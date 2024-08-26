@@ -1,6 +1,6 @@
 import React from "react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import { wakeboards } from "../constants/index";
+import { wakeboards, OnSaleItem } from "../constants/index";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 import { Link } from "react-router-dom";
 const WakeBoards = () => {
@@ -20,6 +20,13 @@ const WakeBoards = () => {
       }
     }
   };
+
+  const calculatePrice = (price, sale) => {
+    let finalPrice = (price - (price * sale) / 100).toFixed(2);
+    return finalPrice;
+  };
+
+  const allwakeboards = [...OnSaleItem, ...wakeboards];
 
   return (
     <>
@@ -42,9 +49,9 @@ const WakeBoards = () => {
           className="relative flex ml-[5rem] mt-5 w-max cursor-pointer"
           ref={scrollRef}
         >
-          {wakeboards.map((board, idx) => (
+          {allwakeboards.map((board, idx) => (
             <div
-              className={`w-[300px] h-[400px] shadow-lg shadow-black-500/50 ${
+              className={`relative w-[300px] h-[400px] shadow-lg shadow-black-500/50 ${
                 idx === 0 ? "ml-0" : "ml-8"
               }`}
               key={idx}
@@ -57,11 +64,26 @@ const WakeBoards = () => {
                     className="object-contain h-[300px] w-[300px]"
                   />
                 </Link>
+                {board.sale && (
+                  <div className="absolute top-3 left-2 bg-red-600 text-white rounded-lg px-3 py-1 rotate-[-15deg] shadow-lg text-center">
+                    <p className="font-bold text-xs">{board.sale}% OFF</p>
+                  </div>
+                )}
                 <div>
                   <h1 className="ml-3 text-lg font-bold mt-3 text-wrap">
                     {board.title}
                   </h1>
-                  <p className="ml-3">{board.price}</p>
+                  {board.sale ? (
+                    <p className="ml-3 line-through">{board.price}$</p>
+                  ) : (
+                    <p className="ml-3">{board.price}$</p>
+                  )}
+
+                  {board.sale && (
+                    <p className="ml-3 font-bold">
+                      {calculatePrice(board.price, board.sale)}$
+                    </p>
+                  )}
                 </div>
               </div>
             </div>

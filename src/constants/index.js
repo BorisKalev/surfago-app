@@ -382,7 +382,7 @@ export const OnSaleItem = [
     details:
       "Its clean single concave bottom and rocker profile charge down the line for those who know how to generate speed and momentum to stay in the wave. The wide parallel shape offers a solid platform to learn advanced tricks quickly. The Doctor harnesses the ideal set of design features delivering ultimate forgiveness to the progressing rider. Big experienced riders will not want to miss out on the 57” and 59” options, while the 200 lb., and under club enjoy the 55” option. Glassed with our high end FLEXtec V2 system for unmatched strength and built with FCS Fusion fin plugs in a quad setup.",
     price: "1464.99",
-    sale: "22",
+    sale: "50",
   },
   {
     id: 36,
@@ -393,6 +393,6 @@ export const OnSaleItem = [
     details:
       "Its clean single concave bottom and rocker profile charge down the line for those who know how to generate speed and momentum to stay in the wave. The wide parallel shape offers a solid platform to learn advanced tricks quickly. The Doctor harnesses the ideal set of design features delivering ultimate forgiveness to the progressing rider. Big experienced riders will not want to miss out on the 57” and 59” options, while the 200 lb., and under club enjoy the 55” option. Glassed with our high end FLEXtec V2 system for unmatched strength and built with FCS Fusion fin plugs in a quad setup.",
     price: "1539.99",
-    sale: "50",
+    sale: "22",
   },
 ];

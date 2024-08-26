@@ -64,7 +64,7 @@ const NewArrivals = () => {
                   <h1 className="ml-3 text-lg font-bold mt-3 text-wrap">
                     {board.title}
                   </h1>
-                  <p className="ml-3">{board.price}</p>
+                  <p className="ml-3">{board.price}$</p>
                 </div>
               </div>
             </div>
