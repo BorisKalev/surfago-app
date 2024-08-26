@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { BsCartPlus, BsCartX } from "react-icons/bs";
-import { wakeboards } from "../constants/index";
+import { wakeboards, OnSaleItem } from "../constants/index";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useFavorites } from "../context/FavoritesContext";
@@ -38,7 +38,15 @@ const WakeBoardsPage = () => {
         return items;
     }
   };
-  const sortedArrivals = sortItems(wakeboards, sortOption);
+
+  const calculatePrice = (price, sale) => {
+    let finalPrice = (price - (price * sale) / 100).toFixed(2);
+    return finalPrice;
+  };
+
+  const allWakeboards = [...OnSaleItem, ...wakeboards];
+
+  const sortedArrivals = sortItems(allWakeboards, sortOption);
 
   return (
     <>
@@ -93,9 +101,26 @@ const WakeBoardsPage = () => {
                 )}
               </div>
             </div>
-            <div className="flex flex-col text-center mt-2">
-              <p className="font-bold">{item.title}</p>
-              <p>{item.price}$</p>
+            {item.sale && (
+              <div className="absolute top-3 left-2 bg-red-600 text-white rounded-lg px-3 py-1 rotate-[-15deg] shadow-lg text-center">
+                <p className="font-bold text-xs">{item.sale}% OFF</p>
+              </div>
+            )}
+            <div className="text-center">
+              <h1 className="ml-3 text-lg font-bold mt-3 text-wrap">
+                {item.title}
+              </h1>
+              {item.sale ? (
+                <p className="ml-3 line-through">{item.price}$</p>
+              ) : (
+                <p className="ml-3">{item.price}$</p>
+              )}
+
+              {item.sale && (
+                <p className="ml-3 font-bold">
+                  {calculatePrice(item.price, item.sale)}$
+                </p>
+              )}
             </div>
           </div>
         ))}

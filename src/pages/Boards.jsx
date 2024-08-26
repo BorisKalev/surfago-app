@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { BsCartPlus, BsCartX } from "react-icons/bs";
-import { newArrivals, wakeboards, KneeBoardsInfo } from "../constants/index";
+import {
+  newArrivals,
+  wakeboards,
+  KneeBoardsInfo,
+  OnSaleItem,
+} from "../constants/index";
 import { Link } from "react-router-dom";
 import { useFavorites } from "../context/FavoritesContext";
 import { useCart } from "../context/CartContext";
@@ -39,7 +44,18 @@ const Boards = () => {
         return items;
     }
   };
-  const boards = [...newArrivals, ...wakeboards, ...KneeBoardsInfo];
+
+  const calculatePrice = (price, sale) => {
+    let finalPrice = (price - (price * sale) / 100).toFixed(2);
+    return finalPrice;
+  };
+
+  const boards = [
+    ...OnSaleItem,
+    ...newArrivals,
+    ...wakeboards,
+    ...KneeBoardsInfo,
+  ];
 
   const allboards = sortItems(boards, sortOption);
 
@@ -63,7 +79,7 @@ const Boards = () => {
       <div className="grid grid-cols-3 lg-max:grid-cols-2 sm-max:grid-cols-1 p-5 gap-5 w-full mt-10">
         {allboards.map((item, idx) => (
           <div key={idx} className="relative w-full h-auto mb-[3rem] group">
-            <div className=" border border-black">
+            <div className="border border-black">
               <Link to={`/item/${item.id}`}>
                 <img
                   src={item.img}
@@ -71,6 +87,7 @@ const Boards = () => {
                   className="w-full object-contain h-[400px] cursor-pointer"
                 />
               </Link>
+
               <div className="absolute flex justify-end gap-3 p-5 top-0 right-0 bg-gray-100 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 {isFavorite(item.id) ? (
                   <FaHeart
@@ -96,9 +113,26 @@ const Boards = () => {
                 )}
               </div>
             </div>
-            <div className="flex flex-col text-center mt-2">
-              <p className="font-bold">{item.title}</p>
-              <p>{item.price}$</p>
+            {item.sale && (
+              <div className="absolute top-3 left-2 bg-red-600 text-white rounded-lg px-3 py-1 rotate-[-15deg] shadow-lg text-center">
+                <p className="font-bold text-xs">{item.sale}% OFF</p>
+              </div>
+            )}
+            <div className="text-center">
+              <h1 className="ml-3 text-lg font-bold mt-3 text-wrap">
+                {item.title}
+              </h1>
+              {item.sale ? (
+                <p className="ml-3 line-through">{item.price}$</p>
+              ) : (
+                <p className="ml-3">{item.price}$</p>
+              )}
+
+              {item.sale && (
+                <p className="ml-3 font-bold">
+                  {calculatePrice(item.price, item.sale)}$
+                </p>
+              )}
             </div>
           </div>
         ))}

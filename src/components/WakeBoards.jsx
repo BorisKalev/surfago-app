@@ -49,7 +49,7 @@ const WakeBoards = () => {
           className="relative flex ml-[5rem] mt-5 w-max cursor-pointer"
           ref={scrollRef}
         >
-          {allwakeboards.map((board, idx) => (
+          {allwakeboards.map((item, idx) => (
             <div
               className={`relative w-[300px] h-[400px] shadow-lg shadow-black-500/50 ${
                 idx === 0 ? "ml-0" : "ml-8"
@@ -57,31 +57,31 @@ const WakeBoards = () => {
               key={idx}
             >
               <div className="flex flex-col items-start mb-5">
-                <Link to={`/item/${board.id}`}>
+                <Link to={`/item/${item.id}`}>
                   <img
-                    src={board.img}
-                    alt={board.title}
+                    src={item.img}
+                    alt={item.title}
                     className="object-contain h-[300px] w-[300px]"
                   />
                 </Link>
-                {board.sale && (
+                {item.sale && (
                   <div className="absolute top-3 left-2 bg-red-600 text-white rounded-lg px-3 py-1 rotate-[-15deg] shadow-lg text-center">
-                    <p className="font-bold text-xs">{board.sale}% OFF</p>
+                    <p className="font-bold text-xs">{item.sale}% OFF</p>
                   </div>
                 )}
                 <div>
                   <h1 className="ml-3 text-lg font-bold mt-3 text-wrap">
-                    {board.title}
+                    {item.title}
                   </h1>
-                  {board.sale ? (
-                    <p className="ml-3 line-through">{board.price}$</p>
+                  {item.sale ? (
+                    <p className="ml-3 line-through">{item.price}$</p>
                   ) : (
-                    <p className="ml-3">{board.price}$</p>
+                    <p className="ml-3">{item.price}$</p>
                   )}
 
-                  {board.sale && (
+                  {item.sale && (
                     <p className="ml-3 font-bold">
-                      {calculatePrice(board.price, board.sale)}$
+                      {calculatePrice(item.price, item.sale)}$
                     </p>
                   )}
                 </div>
