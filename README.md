@@ -36,5 +36,4 @@ Welcome to **Surfago**, an online surfboard and accessories app. Surfago provide
   - Context API (for cart and wishlist management)
 - **Icons**:
   - `react-icons` for scalable vector icons.
-- **Backend** (optional):
-  - Firebase for hosting and database management (optional for deployment).
+
