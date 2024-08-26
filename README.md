@@ -8,9 +8,6 @@ Welcome to **Surfago**, an online surfboard and accessories app. Surfago provide
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
-- [Usage](#usage)
-- [File Structure](#file-structure)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Demo
