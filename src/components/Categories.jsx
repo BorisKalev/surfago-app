@@ -8,7 +8,7 @@ const Categories = () => {
       {CategoriesInfo.map((categorie, idx) => (
         <div
           key={categorie.id}
-          className={`relative flex w-[400px] h-[400px] sm-max:ml-0 sm-max:w-full ${
+          className={`relative flex w-[400px] h-[400px] sm-max:ml-2 sm-max:w-full ${
             idx === 0 ? "ml-0" : "ml-8"
           }`}
         >

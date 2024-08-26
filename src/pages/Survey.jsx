@@ -16,9 +16,9 @@ const Survey = () => {
           on our store.
         </p>
         <p className="text-md mt-5">
-          We would LOVE to hear from you and get some feedback on our store.
-          Simply enter your details, answer a few short questions and you'll be
-          in with a chance to WIN a £150 Beach Boutique Gift Card.
+          We’d love to hear your thoughts and feedback on our store! Just share
+          a few details and answer some quick questions, and you'll be entered
+          for a chance to WIN a £150 Surfago Gift Card.
         </p>
         <div className="flex sm-max:flex-col justify-between gap-3 mt-5 w-full">
           <div className="flex flex-col w-full">
