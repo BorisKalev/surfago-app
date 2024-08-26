@@ -1,6 +1,6 @@
-# Surfago E-Commerce App
+# Surfago App
 
-Welcome to **Surfago**, an online surfboard and accessories e-commerce platform. Surfago provides a seamless shopping experience for surfers looking to purchase the latest surfboards, accessories, and more.
+Welcome to **Surfago**, an online surfboard and accessories app. Surfago provides a seamless shopping experience for surfers looking to purchase the latest surfboards, accessories, and more.
 
 ## Table of Contents
 
