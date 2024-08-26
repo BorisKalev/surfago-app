@@ -34,3 +34,5 @@ Welcome to **Surfago**, an online surfboard and accessories app. Surfago provide
 - **Icons**:
   - `react-icons` for scalable vector icons.
 
+This concise version covers all the essentials, including demo, features, technology, installation, and the MIT license!
+
