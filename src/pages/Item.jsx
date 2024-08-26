@@ -5,6 +5,7 @@ import {
   KneeBoardsInfo,
   newArrivals,
   wakeboards,
+  OnSaleItem,
 } from "../constants/index";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { useFavorites } from "../context/FavoritesContext";
@@ -17,6 +18,7 @@ import { useState } from "react";
 const ItemDetailPage = () => {
   const { id } = useParams(); // Get le item id des parametres du URL
   const item = [
+    ...OnSaleItem,
     ...newArrivals,
     ...HandleRopesInfo,
     ...BootsInfo,
