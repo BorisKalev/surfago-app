@@ -9,7 +9,7 @@ import { useFavorites } from "../context/FavoritesContext";
 import { useCart } from "../context/CartContext";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { MdKeyboardArrowRight } from "react-icons/md";
-
+import logo from "../assets/LogoSurfago_texte.png";
 const Navbar = () => {
   const { favorites } = useFavorites();
   const { cart } = useCart();
@@ -39,14 +39,18 @@ const Navbar = () => {
       </div>
 
       {/* Navbar */}
-      <div className="relative flex items-center w-full justify-end h-[5rem] lg-max:flex-col">
+      <div className="relative flex items-center w-full justify-end h-[5rem] lg-max:h-[8rem] lg-max:flex-col">
         <RxHamburgerMenu
           onClick={toggleMenu}
           className="absolute top-5 left-5 text-2xl text-black hidden md-max:flex cursor-pointer"
         />
         <Link to={"/"}>
-          <h1 className="absolute top-5 text-2xl left-1/2 transform -translate-x-1/2 bg-clip-text text-transparent bg-gradient-custom-blue lg-max:top-2 lg-max:max-w-full">
-            Surfago
+          <h1 className="absolute -top-[10px] text-2xl left-1/2 transform -translate-x-1/2 lg-max:relative lg-max:max-w-full">
+            <img
+              src={logo}
+              alt="surfago-logo"
+              className="w-[100px] h-[100px]"
+            />
           </h1>
         </Link>
         <div className="flex items-center lg-max:mb-3">
