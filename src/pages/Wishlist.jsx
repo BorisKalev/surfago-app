@@ -27,11 +27,13 @@ const Wishlist = () => {
         {favorites.map((item, idx) => (
           <div key={idx} className="relative w-full h-auto mb-[3rem] group">
             <div className=" border border-black">
-              <img
-                src={item.img}
-                alt={item.title}
-                className="w-full object-contain h-[400px] cursor-pointer"
-              />
+              <Link to={`/item/${item.id}`}>
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full object-contain h-[400px] cursor-pointer"
+                />
+              </Link>
             </div>
             <div className="absolute flex justify-end gap-3 p-5 top-0 right-0 bg-gray-100 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <IoCloseCircleSharp
