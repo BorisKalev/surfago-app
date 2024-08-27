@@ -158,6 +158,13 @@ const Navbar = () => {
           </button>
           <ul>
             <li className="mb-3 hover:opacity-70 duration-300">
+              <Link to={"/"} className="flex justify-between items-center">
+                <button onClick={toggleMenu}>Homepage</button>
+                <MdKeyboardArrowRight className="ml-2" />
+              </Link>
+            </li>
+            <div className="flex flex-col h-[2px] w-full bg-slate-100 mb-2" />
+            <li className="mb-3 hover:opacity-70 duration-300">
               <Link
                 to={"/newarrivals"}
                 className="flex justify-between items-center"
