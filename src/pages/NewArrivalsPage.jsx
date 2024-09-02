@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { BsCartPlus, BsCartX } from "react-icons/bs";
+
 import { newArrivals } from "../constants/index";
 import { Link } from "react-router-dom";
 import { useFavorites } from "../context/FavoritesContext";

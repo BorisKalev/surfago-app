@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { BsCartPlus, BsCartX } from "react-icons/bs";
+
 import { BootsInfo } from "../constants/index";
 import { useFavorites } from "../context/FavoritesContext";
 import { useCart } from "../context/CartContext";
@@ -9,6 +9,7 @@ const Boots = () => {
   const { favorites, addFavorite, removeFavorite, isFavorite } = useFavorites();
   const [sortOption, setSortOption] = useState("featured");
   const { addToCart, removeFromCart, isInCart } = useCart();
+
   const handleSortChange = (event) => {
     setSortOption(event.target.value);
   };

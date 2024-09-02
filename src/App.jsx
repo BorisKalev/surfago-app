@@ -22,6 +22,7 @@ import Boards from "./pages/Boards";
 import { FavoritesProvider } from "./context/FavoritesContext";
 import { CartProvider } from "./context/CartContext";
 import OnSalePage from "./pages/OnSalePage";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   const location = useLocation();
@@ -38,6 +39,7 @@ const App = () => {
     <>
       <CartProvider>
         <FavoritesProvider>
+          <ScrollToTop />
           <Navbar />
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>

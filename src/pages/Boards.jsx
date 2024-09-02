@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { BsCartPlus, BsCartX } from "react-icons/bs";
+
 import {
   newArrivals,
   wakeboards,
