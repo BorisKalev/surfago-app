@@ -69,7 +69,7 @@ const KneeBoards = () => {
                   className="w-full object-contain h-[400px] cursor-pointer"
                 />
               </Link>
-              <div className="absolute flex justify-end gap-3 p-5 top-0 right-0 bg-gray-100 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="absolute flex justify-end gap-3 p-5 top-0 right-0">
                 {isFavorite(item.id) ? (
                   <FaHeart
                     className="hover:opacity-60 cursor-pointer"
@@ -79,17 +79,6 @@ const KneeBoards = () => {
                   <FaRegHeart
                     className="hover:opacity-60 cursor-pointer"
                     onClick={() => addFavorite(item)}
-                  />
-                )}
-                {isInCart(item.id) ? (
-                  <BsCartX
-                    className="hover:opacity-60 cursor-pointer text-red-500"
-                    onClick={() => removeFromCart(item.id)}
-                  />
-                ) : (
-                  <BsCartPlus
-                    className="hover:opacity-60 cursor-pointer"
-                    onClick={() => addToCart(item)}
                   />
                 )}
               </div>

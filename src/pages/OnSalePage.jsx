@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { OnSaleItem } from "../constants/index";
+
+import { FaHeart, FaRegHeart } from "react-icons/fa";
+
+import { useFavorites } from "../context/FavoritesContext";
 const OnSalePage = () => {
+  const { favorites, addFavorite, removeFavorite, isFavorite } = useFavorites();
+
   const calculatePrice = (price, sale) => {
     let finalPrice = (price - (price * sale) / 100).toFixed(2);
     return finalPrice;
@@ -21,6 +27,19 @@ const OnSalePage = () => {
                   className="w-full object-contain h-[400px] cursor-pointer"
                 />
               </Link>
+              <div className="absolute flex justify-end gap-3 p-5 top-0 right-0">
+                {isFavorite(item.id) ? (
+                  <FaHeart
+                    className="hover:opacity-60 cursor-pointer"
+                    onClick={() => removeFavorite(item.id)}
+                  />
+                ) : (
+                  <FaRegHeart
+                    className="hover:opacity-60 cursor-pointer"
+                    onClick={() => addFavorite(item)}
+                  />
+                )}
+              </div>
             </div>
             {item.sale && (
               <div className="absolute top-3 left-2 bg-red-600 text-white rounded-lg px-3 py-1 rotate-[-15deg] shadow-lg text-center">

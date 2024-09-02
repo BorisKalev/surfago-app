@@ -60,7 +60,7 @@ const NewArrivalsPage = () => {
       <div className="grid grid-cols-3 lg-max:grid-cols-2 sm-max:grid-cols-1 p-5 gap-5 w-full mt-10">
         {sortedArrivals.map((item) => (
           <div key={item.id} className="relative w-full h-auto mb-[3rem] group">
-            <div className=" border border-black">
+            <div className="border border-black relative">
               <Link to={`/item/${item.id}`}>
                 <img
                   src={item.img}
@@ -68,7 +68,7 @@ const NewArrivalsPage = () => {
                   className="w-full object-contain h-[400px] cursor-pointer"
                 />
               </Link>
-              <div className="absolute flex justify-end gap-3 p-5 top-0 right-0 bg-gray-100 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="absolute flex justify-end gap-3 p-5 top-0 right-0">
                 {isFavorite(item.id) ? (
                   <FaHeart
                     className="hover:opacity-60 cursor-pointer"
@@ -78,17 +78,6 @@ const NewArrivalsPage = () => {
                   <FaRegHeart
                     className="hover:opacity-60 cursor-pointer"
                     onClick={() => addFavorite(item)}
-                  />
-                )}
-                {isInCart(item.id) ? (
-                  <BsCartX
-                    className="hover:opacity-60 cursor-pointer text-red-500"
-                    onClick={() => removeFromCart(item.id)}
-                  />
-                ) : (
-                  <BsCartPlus
-                    className="hover:opacity-60 cursor-pointer"
-                    onClick={() => addToCart(item)}
                   />
                 )}
               </div>
