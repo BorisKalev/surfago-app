@@ -4,7 +4,8 @@ import NewArrivals from "./components/NewArrivals";
 import WakeBoards from "./components/WakeBoards";
 import Footer from "./components/Footer";
 import Categories from "./components/Categories";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Accessories from "./pages/Accessories";
 import Galerie from "./pages/Galerie";
 import Boots from "./pages/Boots";
@@ -22,38 +23,41 @@ import { FavoritesProvider } from "./context/FavoritesContext";
 import { CartProvider } from "./context/CartContext";
 import OnSalePage from "./pages/OnSalePage";
 const App = () => {
+  const location = useLocation();
   return (
     <>
       <CartProvider>
         <FavoritesProvider>
           <Navbar />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Hero />
-                  <NewArrivals />
-                  <WakeBoards />
-                  <Categories />
-                </>
-              }
-            />
-            <Route path="/survey" element={<Survey />} />
-            <Route path="/galerie" element={<Galerie />} />
-            <Route path="/boots" element={<Boots />} />
-            <Route path="/accessories" element={<Accessories />} />
-            <Route path="/newarrivals" element={<NewArrivalsPage />} />
-            <Route path="/wishlist" element={<Wishlist />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/handles-ropes" element={<HandleRopes />} />
-            <Route path="/kneeboards" element={<KneeBoards />} />
-            <Route path="/wakesurfs" element={<WakeSurfs />} />
-            <Route path="/wakeboards" element={<WakeBoardsPage />} />
-            <Route path="/boards" element={<Boards />} />
-            <Route path="/sale" element={<OnSalePage />} />
-            <Route path="/item/:id" element={<Item />} />
-          </Routes>
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Hero />
+                    <NewArrivals />
+                    <WakeBoards />
+                    <Categories />
+                  </>
+                }
+              />
+              <Route path="/survey" element={<Survey />} />
+              <Route path="/galerie" element={<Galerie />} />
+              <Route path="/boots" element={<Boots />} />
+              <Route path="/accessories" element={<Accessories />} />
+              <Route path="/newarrivals" element={<NewArrivalsPage />} />
+              <Route path="/wishlist" element={<Wishlist />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/handles-ropes" element={<HandleRopes />} />
+              <Route path="/kneeboards" element={<KneeBoards />} />
+              <Route path="/wakesurfs" element={<WakeSurfs />} />
+              <Route path="/wakeboards" element={<WakeBoardsPage />} />
+              <Route path="/boards" element={<Boards />} />
+              <Route path="/sale" element={<OnSalePage />} />
+              <Route path="/item/:id" element={<Item />} />
+            </Routes>
+          </AnimatePresence>
           <Footer />
         </FavoritesProvider>
       </CartProvider>
