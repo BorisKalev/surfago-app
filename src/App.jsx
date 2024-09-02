@@ -5,7 +5,7 @@ import WakeBoards from "./components/WakeBoards";
 import Footer from "./components/Footer";
 import Categories from "./components/Categories";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Accessories from "./pages/Accessories";
 import Galerie from "./pages/Galerie";
 import Boots from "./pages/Boots";
@@ -22,8 +22,18 @@ import Boards from "./pages/Boards";
 import { FavoritesProvider } from "./context/FavoritesContext";
 import { CartProvider } from "./context/CartContext";
 import OnSalePage from "./pages/OnSalePage";
+
 const App = () => {
   const location = useLocation();
+
+  const pageVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
+
+  const pageTransition = { duration: 0.5 };
+
   return (
     <>
       <CartProvider>
@@ -34,18 +44,37 @@ const App = () => {
               <Route
                 path="/"
                 element={
-                  <>
+                  <motion.div
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    variants={pageVariants}
+                    transition={pageTransition}
+                  >
                     <Hero />
                     <NewArrivals />
                     <WakeBoards />
                     <Categories />
-                  </>
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/accessories"
+                element={
+                  <motion.div
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    variants={pageVariants}
+                    transition={pageTransition}
+                  >
+                    <Accessories />
+                  </motion.div>
                 }
               />
               <Route path="/survey" element={<Survey />} />
               <Route path="/galerie" element={<Galerie />} />
               <Route path="/boots" element={<Boots />} />
-              <Route path="/accessories" element={<Accessories />} />
               <Route path="/newarrivals" element={<NewArrivalsPage />} />
               <Route path="/wishlist" element={<Wishlist />} />
               <Route path="/cart" element={<Cart />} />
