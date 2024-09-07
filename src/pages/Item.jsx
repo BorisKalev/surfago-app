@@ -45,7 +45,7 @@ const ItemDetailPage = () => {
 
   return (
     <>
-      <div className="flex md-max:flex-col justify-center p-5 w-full">
+      <div className="flex md-max:flex-col justify-center p-5 w-full mt-10">
         <div className="flex items-center justify-center bg-gray-100 w-[350px] h-[350px] md-max:m-auto md-max:w-full md-max:max-w-lg">
           <img
             src={item.img}

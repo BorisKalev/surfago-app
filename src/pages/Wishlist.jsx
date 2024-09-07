@@ -1,8 +1,7 @@
 import React from "react";
 import { useFavorites } from "../context/FavoritesContext";
 import { Link } from "react-router-dom";
-import { IoCloseCircleSharp } from "react-icons/io5";
-import { FaTrashAlt, FaCheck, FaTimes } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 const Wishlist = () => {
   const { favorites, removeFavorite } = useFavorites();
 

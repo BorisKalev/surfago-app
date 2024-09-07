@@ -36,63 +36,65 @@ const App = () => {
   const pageTransition = { duration: 0.5 };
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <CartProvider>
         <FavoritesProvider>
           <ScrollToTop />
           <Navbar />
-          <AnimatePresence mode="wait">
-            <Routes location={location} key={location.pathname}>
-              <Route
-                path="/"
-                element={
-                  <motion.div
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    variants={pageVariants}
-                    transition={pageTransition}
-                  >
-                    <Hero />
-                    <NewArrivals />
-                    <WakeBoards />
-                    <Categories />
-                  </motion.div>
-                }
-              />
-              <Route
-                path="/accessories"
-                element={
-                  <motion.div
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    variants={pageVariants}
-                    transition={pageTransition}
-                  >
-                    <Accessories />
-                  </motion.div>
-                }
-              />
-              <Route path="/survey" element={<Survey />} />
-              <Route path="/galerie" element={<Galerie />} />
-              <Route path="/boots" element={<Boots />} />
-              <Route path="/newarrivals" element={<NewArrivalsPage />} />
-              <Route path="/wishlist" element={<Wishlist />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/handles-ropes" element={<HandleRopes />} />
-              <Route path="/kneeboards" element={<KneeBoards />} />
-              <Route path="/wakesurfs" element={<WakeSurfs />} />
-              <Route path="/wakeboards" element={<WakeBoardsPage />} />
-              <Route path="/boards" element={<Boards />} />
-              <Route path="/sale" element={<OnSalePage />} />
-              <Route path="/item/:id" element={<Item />} />
-            </Routes>
-          </AnimatePresence>
+          <div className="flex-grow">
+            <AnimatePresence mode="wait">
+              <Routes location={location} key={location.pathname}>
+                <Route
+                  path="/"
+                  element={
+                    <motion.div
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                      variants={pageVariants}
+                      transition={pageTransition}
+                    >
+                      <Hero />
+                      <NewArrivals />
+                      <WakeBoards />
+                      <Categories />
+                    </motion.div>
+                  }
+                />
+                <Route
+                  path="/accessories"
+                  element={
+                    <motion.div
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                      variants={pageVariants}
+                      transition={pageTransition}
+                    >
+                      <Accessories />
+                    </motion.div>
+                  }
+                />
+                <Route path="/survey" element={<Survey />} />
+                <Route path="/galerie" element={<Galerie />} />
+                <Route path="/boots" element={<Boots />} />
+                <Route path="/newarrivals" element={<NewArrivalsPage />} />
+                <Route path="/wishlist" element={<Wishlist />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/handles-ropes" element={<HandleRopes />} />
+                <Route path="/kneeboards" element={<KneeBoards />} />
+                <Route path="/wakesurfs" element={<WakeSurfs />} />
+                <Route path="/wakeboards" element={<WakeBoardsPage />} />
+                <Route path="/boards" element={<Boards />} />
+                <Route path="/sale" element={<OnSalePage />} />
+                <Route path="/item/:id" element={<Item />} />
+              </Routes>
+            </AnimatePresence>
+          </div>
           <Footer />
         </FavoritesProvider>
       </CartProvider>
-    </>
+    </div>
   );
 };
 
