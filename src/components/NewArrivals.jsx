@@ -57,7 +57,7 @@ const NewArrivals = () => {
                   <img
                     src={board.img}
                     alt={board.title}
-                    className="object-contain h-[350px] w-[350px]"
+                    className="object-contain h-[300px] w-[300px]"
                   />
                 </Link>
                 <div>

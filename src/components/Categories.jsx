@@ -4,11 +4,11 @@ import { CategoriesInfo } from "../constants/index";
 
 const Categories = () => {
   return (
-    <div className="mt-[10rem] flex justify-center w-full h-full gap-10 md-max:gap-3 ml-2 sm-max:flex-col">
+    <div className="mt-[10rem] flex justify-between px-20 lg-max:px-8 w-full h-full gap-10 md-max:gap-3 ml-2 sm-max:flex-col">
       {CategoriesInfo.map((categorie, idx) => (
         <div
           key={categorie.id}
-          className={`relative flex w-[350px] h-[350px] sm-max:ml-2 sm-max:w-full ${
+          className={`relative flex w-[400px] h-[400px] sm-max:ml-2 sm-max:w-full ${
             idx === 0 ? "ml-0" : "ml-8"
           }`}
         >
