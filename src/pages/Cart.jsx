@@ -33,7 +33,7 @@ const Cart = () => {
                     <img
                       src={item.img}
                       alt={item.title}
-                      className="object-contain w-[200px] h-[170px] bg-gray-100 lg-max:w-[300px] lg-max:h-[250px] cursor-pointer"
+                      className="object-contain w-[200px] h-[170px] bg-gray-100 lg-max:w-[350px] lg-max:h-[250px] cursor-pointer"
                     />
                   </Link>
                   <h1 className="font-bold w-[190px] lg-max:text-center">

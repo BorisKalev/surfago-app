@@ -32,7 +32,7 @@ const Wishlist = () => {
                 <img
                   src={item.img}
                   alt={item.title}
-                  className="w-full object-contain h-[400px] cursor-pointer"
+                  className="w-full object-contain h-[350px] cursor-pointer"
                 />
               </Link>
             </div>

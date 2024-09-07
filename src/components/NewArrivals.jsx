@@ -34,7 +34,7 @@ const NewArrivals = () => {
           </p>
         </div>
         <Link to={"/newarrivals"}>
-          <div className="flex items-center gap-2 lg-max:ml-[2rem] lg-max:text-blue-400">
+          <div className="flex items-center gap-2 lg-max:ml-[2rem] lg-max:text-blue-300">
             <h1>View All</h1>
             <FaArrowAltCircleRight />
           </div>
@@ -57,7 +57,7 @@ const NewArrivals = () => {
                   <img
                     src={board.img}
                     alt={board.title}
-                    className="object-contain h-[300px] w-[300px]"
+                    className="object-contain h-[350px] w-[350px]"
                   />
                 </Link>
                 <div>

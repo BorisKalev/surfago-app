@@ -46,11 +46,11 @@ const ItemDetailPage = () => {
   return (
     <>
       <div className="flex md-max:flex-col justify-center p-5 w-full">
-        <div className="flex items-center justify-center bg-gray-100 w-[400px] h-[400px] md-max:m-auto md-max:w-full md-max:max-w-lg">
+        <div className="flex items-center justify-center bg-gray-100 w-[350px] h-[350px] md-max:m-auto md-max:w-full md-max:max-w-lg">
           <img
             src={item.img}
             alt={item.title}
-            className="w-[300px] h-[400px] object-contain m-auto"
+            className="w-[350px] h-[350px] object-contain m-auto"
           />
         </div>
         <div className="flex flex-col md:px-10 md:max-w-lg md-max:m-auto md-max:mt-5 min-w-lg w-full">

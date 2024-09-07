@@ -65,7 +65,7 @@ const WakeSurfs = () => {
                 <img
                   src={item.img}
                   alt={item.title}
-                  className="w-full object-contain h-[400px] cursor-pointer"
+                  className="w-full object-contain h-[350px] cursor-pointer"
                 />
               </Link>
               <div className="absolute flex justify-end gap-3 p-5 top-0 right-0">

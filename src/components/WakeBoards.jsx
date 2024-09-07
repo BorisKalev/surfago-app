@@ -37,7 +37,7 @@ const WakeBoards = () => {
           <h1 className="font-roboto text-3xl">Wakesurf Boards</h1>
         </div>
         <Link to={"/wakeboards"}>
-          <div className="flex items-center gap-2 lg-max:ml-[2rem] lg-max:text-blue-400">
+          <div className="flex items-center gap-2 lg-max:ml-[2rem] lg-max:text-blue-300">
             <h1>View All</h1>
             <FaArrowAltCircleRight />
           </div>
@@ -60,7 +60,7 @@ const WakeBoards = () => {
                   <img
                     src={item.img}
                     alt={item.title}
-                    className="object-contain h-[300px] w-[300px]"
+                    className="object-contain h-[300px] w-[400px]"
                   />
                 </Link>
                 {item.sale && (
