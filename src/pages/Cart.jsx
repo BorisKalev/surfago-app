@@ -29,34 +29,39 @@ const Cart = () => {
             >
               <div className="flex justify-between lg-max:flex-col lg-max:justify-center lg-max:items-center">
                 <div className="flex items-center gap-5 py-3 lg-max:flex-col">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="object-contain w-[200px] h-[170px] bg-gray-100 lg-max:w-[300px] lg-max:h-[250px]"
-                  />
-                  <h1 className="font-bold w-[200px] lg-max:text-center">
+                  <Link to={`/item/${item.id}`}>
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className="object-contain w-[200px] h-[170px] bg-gray-100 lg-max:w-[300px] lg-max:h-[250px] cursor-pointer"
+                    />
+                  </Link>
+                  <h1 className="font-bold w-[190px] lg-max:text-center">
                     {item.title}
                   </h1>
                 </div>
-                <div className="flex items-center gap-5 flex-shrink-0">
-                  <h1 className="lg-max:hidden">Quantity</h1>
-                  <button
-                    className="p-1 h-10 w-10 bg-blue-500 rounded-full text-white hover:opacity-50"
-                    onClick={() => handleSubstracting(item.id, item.quantity)}
-                  >
-                    -
-                  </button>
-                  <h1>{item.quantity}</h1>
-                  <button
-                    className="p-1 h-10 w-10 bg-blue-500 rounded-full text-white hover:opacity-50"
-                    onClick={() => handleAdding(item.id, item.quantity)}
-                  >
-                    +
-                  </button>
+                <div className="flex items-center gap-5">
+                  <div className="flex gap-2 items-center border border-gray-300 p-2 rounded-lg w-[145px] bg-white shadow-md">
+                    <button
+                      className="border-r border-gray-300 px-3 py-1 text-lg font-medium hover:bg-gray-200 focus:outline-none"
+                      onClick={() => handleSubstracting(item.id, item.quantity)}
+                    >
+                      -
+                    </button>
+                    <h1 className="px-4 text-lg font-semibold text-center">
+                      {item.quantity}
+                    </h1>
+                    <button
+                      className="border-l border-gray-300 px-3 py-1 text-lg font-medium hover:bg-gray-200 focus:outline-none"
+                      onClick={() => handleAdding(item.id, item.quantity)}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
 
                 {item.sale ? (
-                  <div className="flex items-center gap-1 flex-shrink-0 lg-max:mt-5">
+                  <div className="flex items-center gap-1 lg-max:mt-5">
                     <h1>Price:</h1>
                     <h1 className="font-bold">
                       {(
@@ -66,7 +71,7 @@ const Cart = () => {
                     </h1>
                   </div>
                 ) : (
-                  <div className="flex items-center gap-1 flex-shrink-0 lg-max:mt-5">
+                  <div className="flex items-center gap-1 lg-max:mt-5 w-[150px]">
                     <h1>Price:</h1>
                     <h1 className="font-bold">
                       {(item.price * item.quantity).toFixed(2)}$
