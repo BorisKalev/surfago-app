@@ -2,6 +2,7 @@ import React from "react";
 import { useFavorites } from "../context/FavoritesContext";
 import { Link } from "react-router-dom";
 import { IoCloseCircleSharp } from "react-icons/io5";
+import { FaTrashAlt, FaCheck, FaTimes } from "react-icons/fa";
 const Wishlist = () => {
   const { favorites, removeFavorite } = useFavorites();
 
@@ -35,12 +36,15 @@ const Wishlist = () => {
                 />
               </Link>
             </div>
-            <div className="absolute flex justify-end gap-3 p-5 top-0 right-0 bg-gray-100 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <IoCloseCircleSharp
-                className="cursor-pointer text-lg"
+            <div className="absolute top-3 left-2 w-full opacity-0 group-hover:opacity-100 transition-all duration-500">
+              <button
                 onClick={() => removeFavorite(item.id)}
-              />
+                className="bg-red-500 text-white py-1 px-3 rounded-full transform translate-x-full group-hover:translate-x-0 transition-transform"
+              >
+                Remove
+              </button>
             </div>
+
             <div className="flex flex-col text-center mt-2">
               <p className="font-bold">{item.title}</p>
               <p>{item.price}$</p>
