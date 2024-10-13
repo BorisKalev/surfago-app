@@ -28,7 +28,7 @@ const Cart = () => {
               key={idx}
             >
               <div className="flex justify-between lg-max:flex-col lg-max:justify-center lg-max:items-center">
-                <div className="flex items-center gap-5 py-3 lg-max:flex-col">
+                <div className="flex items-center gap-5 py-3 lg-max:flex-col flex-2">
                   <Link to={`/item/${item.id}`}>
                     <img
                       src={item.img}
@@ -40,8 +40,8 @@ const Cart = () => {
                     {item.title}
                   </h1>
                 </div>
-                <div className="flex items-center gap-5">
-                  <div className="flex gap-2 items-center border border-gray-300 p-2 rounded-lg w-[145px] bg-white shadow-md">
+                <div className="flex items-center justify-center gap-5 flex-1 pl-44 xl-max:pl-0 ">
+                  <div className="flex gap-2 items-center justify-center border border-gray-300 p-2 rounded-lg w-[145px] bg-white shadow-md">
                     <button
                       className="border-r border-gray-300 px-3 py-1 text-lg font-medium hover:bg-gray-200 focus:outline-none"
                       onClick={() => handleSubstracting(item.id, item.quantity)}
@@ -61,7 +61,7 @@ const Cart = () => {
                 </div>
 
                 {item.sale ? (
-                  <div className="flex items-center gap-1 lg-max:mt-5">
+                  <div className="flex items-center justify-center flex-1 gap-1 lg-max:mt-5">
                     <h1>Price:</h1>
                     <h1 className="font-bold">
                       {(
@@ -71,7 +71,7 @@ const Cart = () => {
                     </h1>
                   </div>
                 ) : (
-                  <div className="flex items-center gap-1 lg-max:mt-5 w-[150px]">
+                  <div className="flex items-center justify-center flex-1 gap-1 lg-max:mt-5 w-[150px]">
                     <h1>Price:</h1>
                     <h1 className="font-bold">
                       {(item.price * item.quantity).toFixed(2)}$
@@ -79,7 +79,7 @@ const Cart = () => {
                   </div>
                 )}
 
-                <div className="flex items-center lg-max:mt-5">
+                <div className="flex flex-1 items-center justify-center lg-max:mt-5">
                   <button onClick={() => removeFromCart(item.id)}>
                     <AiFillDelete className="text-red-600 text-lg lg-max:text-xl" />
                   </button>
